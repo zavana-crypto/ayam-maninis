@@ -22,8 +22,7 @@
     <header id="header">
         <div class="container navbar">
             <a href="index.html" class="logo">
-                <i class="fa-solid fa-drumstick-bite"></i> 
-                <span>Ayam Ma'ninis</span>
+                <img src="logo.png" alt="Logo Ayam Ma'ninis" style="height: 45px; width: auto; object-fit: contain;">
             </a>
             
             <nav class="nav-links">
@@ -69,13 +68,164 @@
     <section class="menu section-padding">
         <div class="container">
             
-            <!-- Menu Container (Dynamic) -->
-            <div id="menu-container" class="menu-grid">
-                <!-- Data akan di-load dari Firestore di sini -->
-                <div class="text-center" style="width: 100%; grid-column: 1 / -1;">
-                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--clr-primary);"></i>
-                    <p class="mt-2">Memuat menu...</p>
+            <!-- Menu Container (Static Premium) -->
+            <div id="premium-menu-container" class="menu-grid">
+                
+                <!-- Menu 1 -->
+                <div class="menu-card reveal fade-bottom">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-1.jpg" alt="Ayam Crispy Original" loading="lazy">
+                        <span class="menu-tag"><i class="fa-solid fa-star"></i> Favorit</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Ayam Crispy Original</h3>
+                        <p>Potongan ayam segar berbalut tepung bumbu rahasia yang digoreng hingga renyah keemasan dengan tekstur juicy di dalam.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 15.000</span>
+                            <button class="btn-sm order-btn" data-item="Ayam Crispy Original" data-price="Rp 15.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Menu 2 -->
+                <div class="menu-card reveal fade-bottom delay-1">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-2.jpg" alt="Ayam Crispy Pedas" loading="lazy">
+                        <span class="menu-tag" style="background: linear-gradient(135deg, #ff1744, #d50000); color: white;"><i class="fa-solid fa-fire"></i> Hot</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Ayam Crispy Pedas</h3>
+                        <p>Ayam crispy premium dengan bumbu marinasi pedas gurih yang meresap sempurna hingga ke tulang.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 16.000</span>
+                            <button class="btn-sm order-btn" data-item="Ayam Crispy Pedas" data-price="Rp 16.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 3 -->
+                <div class="menu-card reveal fade-bottom delay-2">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-3.jpg" alt="Paket Hemat 1" loading="lazy">
+                        <span class="menu-tag"><i class="fa-solid fa-crown"></i> Best Seller</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Paket Hemat 1</h3>
+                        <p>Nasi putih pulen hangat dipadukan dengan 1 potong Ayam Crispy Original dan segelas Es Teh Manis segar.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 22.000</span>
+                            <button class="btn-sm order-btn" data-item="Paket Hemat 1" data-price="Rp 22.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 4 -->
+                <div class="menu-card reveal fade-bottom">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-4.jpg" alt="Paket Hemat 2" loading="lazy">
+                        <span class="menu-tag"><i class="fa-solid fa-thumbs-up"></i> Rekomendasi</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Paket Hemat 2</h3>
+                        <p>Sajian mengenyangkan: Nasi putih hangat, 2 potong Ayam Crispy pilihan, lengkap dengan Es Jeruk asli.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 35.000</span>
+                            <button class="btn-sm order-btn" data-item="Paket Hemat 2" data-price="Rp 35.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 5 -->
+                <div class="menu-card reveal fade-bottom delay-1">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-5.jpg" alt="Burger Ayam Crispy" loading="lazy">
+                        <span class="menu-tag" style="background: linear-gradient(135deg, #00c853, #00e676); color: white;"><i class="fa-solid fa-sparkles"></i> Baru</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Burger Ayam Crispy</h3>
+                        <p>Roti bun lembut dipanggang sempurna, berisi fillet ayam crispy utuh, selada segar, keju leleh, dan saus spesial.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 25.000</span>
+                            <button class="btn-sm order-btn" data-item="Burger Ayam Crispy" data-price="Rp 25.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 6 -->
+                <div class="menu-card reveal fade-bottom delay-2">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-6.jpg" alt="Kentang Goreng" loading="lazy">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Kentang Goreng</h3>
+                        <p>Potongan kentang premium yang digoreng renyah di luar dan lembut di dalam, disajikan dengan taburan bumbu gurih.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 12.000</span>
+                            <button class="btn-sm order-btn" data-item="Kentang Goreng" data-price="Rp 12.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 7 -->
+                <div class="menu-card reveal fade-bottom">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-7.jpg" alt="Nasi + Ayam Crispy" loading="lazy">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Nasi + Ayam Crispy</h3>
+                        <p>Kombinasi klasik yang tak pernah salah: Ayam crispy original besar bersanding dengan seporsi nasi putih mengepul.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 18.000</span>
+                            <button class="btn-sm order-btn" data-item="Nasi + Ayam Crispy" data-price="Rp 18.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 8 -->
+                <div class="menu-card reveal fade-bottom delay-1">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-8.jpg" alt="Chicken Snack Box" loading="lazy">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chicken Snack Box</h3>
+                        <p>Popcorn ayam crispy bite-size yang nagih, sangat cocok untuk camilan santai menemani waktu luang Anda.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 20.000</span>
+                            <button class="btn-sm order-btn" data-item="Chicken Snack Box" data-price="Rp 20.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 9 -->
+                <div class="menu-card reveal fade-bottom delay-2">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-9.jpg" alt="Es Teh Manis" loading="lazy">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Es Teh Manis</h3>
+                        <p>Teh hitam pilihan diseduh sempurna dengan tingkat kemanisan yang pas, disajikan dingin menyegarkan.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 5.000</span>
+                            <button class="btn-sm order-btn" data-item="Es Teh Manis" data-price="Rp 5.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 10 -->
+                <div class="menu-card reveal fade-bottom">
+                    <div class="menu-img">
+                        <img src="images/menu/menu-10.jpg" alt="Es Jeruk Segar" loading="lazy">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Es Jeruk Segar</h3>
+                        <p>Perasan jeruk manis asli penuh vitamin C, sangat pas untuk menyegarkan dahaga sehabis menyantap ayam renyah.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 8.000</span>
+                            <button class="btn-sm order-btn" data-item="Es Jeruk Segar" data-price="Rp 8.000"><i class="fa-brands fa-whatsapp"></i> Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -109,8 +259,7 @@
         <div class="container footer-container">
             <div class="footer-about">
                 <a href="index.html" class="logo footer-logo">
-                    <i class="fa-solid fa-drumstick-bite"></i> 
-                    <span>Ayam Ma'ninis</span>
+                    <img src="logo.png" alt="Logo Ayam Ma'ninis" style="height: 45px; width: auto; object-fit: contain;">
                 </a>
                 <p>Destinasi kuliner ayam goreng krispi berkualitas tinggi di Mbay, Kabupaten Nagekeo. Kombinasi cita rasa konsisten dan pelayanan efisien.</p>
             </div>
