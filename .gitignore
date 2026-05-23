@@ -1,0 +1,23 @@
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Environment Variables (Keep local secrets safe)
+.env
+.env.local
+
+# Node (If planning to add build tools later)
+node_modules/
+package-lock.json
+
+# Firebase specific
+.firebase/
+firebase-debug.log
+firebase-debug.*.log

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Ayam Ma'ninis Fried Chicken</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="loader-circle"></div>
+        <h2>Loading...</h2>
+    </div>
+
+    <!-- Login Section -->
+    <section id="login-section" class="login-container">
+        <div class="login-card glass-card">
+            <h2 style="color: var(--clr-primary); margin-bottom: 5px;"><i class="fa-solid fa-lock"></i> Admin Area</h2>
+            <p style="color: var(--clr-text-muted); margin-bottom: 20px;">Ayam Ma'ninis Fried Chicken</p>
+            
+            <div id="login-error" style="color: var(--clr-primary); margin-bottom: 10px; display: none;"></div>
+            
+            <form id="login-form">
+                <div class="form-group" style="text-align: left;">
+                    <label for="admin-email">Email</label>
+                    <input type="email" id="admin-email" class="form-control" required placeholder="admin@ayammaninis.com">
+                </div>
+                <div class="form-group" style="text-align: left;">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" class="form-control" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Login</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: var(--clr-text-muted);">
+                <a href="index.html" style="text-decoration: underline;"><i class="fa-solid fa-arrow-left"></i> Kembali ke Website</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section (Hidden by default) -->
+    <section id="dashboard-section" class="admin-layout" style="display: none;">
+        
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-drumstick-bite" style="color: var(--clr-primary);"></i> 
+                <span>Admin Panel</span>
+            </div>
+            <nav class="admin-nav">
+                <div class="admin-nav-item active" data-target="panel-profil">
+                    <i class="fa-solid fa-store"></i> Profil Usaha
+                </div>
+                <div class="admin-nav-item" data-target="panel-menu">
+                    <i class="fa-solid fa-utensils"></i> Kelola Menu
+                </div>
+                <div class="admin-nav-item" data-target="panel-gallery">
+                    <i class="fa-solid fa-images"></i> Kelola Galeri
+                </div>
+                <div style="flex-grow: 1;"></div>
+                <div class="admin-nav-item" id="btn-logout" style="color: var(--clr-primary);">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            
+            <!-- Profil Panel -->
+            <div id="panel-profil" class="admin-panel active">
+                <div class="admin-header">
+                    <h2>Pengaturan Profil</h2>
+                    <button class="btn btn-primary" id="btn-save-profil"><i class="fa-solid fa-save"></i> Simpan Perubahan</button>
+                </div>
+                <div class="glass-card">
+                    <div class="form-group">
+                        <label for="prof-wa">Nomor WhatsApp (Gunakan kode negara, misal: 62813...)</label>
+                        <input type="text" id="prof-wa" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="prof-hours">Jam Operasional</label>
+                        <input type="text" id="prof-hours" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="prof-address">Alamat</label>
+                        <textarea id="prof-address" class="form-control" style="min-height: 60px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="prof-desc">Deskripsi Singkat</label>
+                        <textarea id="prof-desc" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Panel -->
+            <div id="panel-menu" class="admin-panel">
+                <div class="admin-header">
+                    <h2>Kelola Menu</h2>
+                    <button class="btn btn-primary" id="btn-add-menu"><i class="fa-solid fa-plus"></i> Tambah Menu</button>
+                </div>
+                
+                <!-- Form Tambah/Edit Menu (Hidden) -->
+                <div id="menu-form-container" class="glass-card" style="display: none; margin-bottom: 20px;">
+                    <h3 id="menu-form-title">Tambah Menu Baru</h3>
+                    <form id="menu-form">
+                        <input type="hidden" id="menu-id">
+                        <div class="form-group">
+                            <label for="menu-name">Nama Menu</label>
+                            <input type="text" id="menu-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="menu-desc">Deskripsi</label>
+                            <input type="text" id="menu-desc" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="menu-price">Kategori Harga (Misal: Ekonomis, Rp 15.000)</label>
+                            <input type="text" id="menu-price" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="menu-image">File Gambar (Akan diupload ke Storage)</label>
+                            <input type="file" id="menu-image" class="form-control" accept="image/*">
+                            <small style="color: var(--clr-text-muted);">Atau URL Gambar Eksternal:</small>
+                            <input type="text" id="menu-image-url" class="form-control mt-2" placeholder="https://...">
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" id="menu-bestseller"> Tandai sebagai Best Seller</label>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" class="btn btn-primary" id="btn-save-menu">Simpan Menu</button>
+                            <button type="button" class="btn btn-outline" id="btn-cancel-menu">Batal</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="glass-card table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Gambar</th>
+                                <th>Nama Menu</th>
+                                <th>Harga</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-menu-list">
+                            <!-- Populated from JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gallery Panel -->
+            <div id="panel-gallery" class="admin-panel">
+                <div class="admin-header">
+                    <h2>Kelola Galeri</h2>
+                    <button class="btn btn-primary" id="btn-add-gallery"><i class="fa-solid fa-upload"></i> Upload Foto</button>
+                </div>
+                
+                <div id="gallery-form-container" class="glass-card" style="display: none; margin-bottom: 20px;">
+                    <h3>Upload Foto Galeri</h3>
+                    <form id="gallery-form">
+                        <div class="form-group">
+                            <label for="gal-image">Pilih Gambar</label>
+                            <input type="file" id="gal-image" class="form-control" accept="image/*">
+                            <small style="color: var(--clr-text-muted);">Atau URL Gambar Eksternal:</small>
+                            <input type="text" id="gal-image-url" class="form-control mt-2" placeholder="https://...">
+                        </div>
+                        <div class="form-group">
+                            <label for="gal-title">Judul/Alt Text</label>
+                            <input type="text" id="gal-title" class="form-control" required>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" class="btn btn-primary">Simpan Foto</button>
+                            <button type="button" class="btn btn-outline" id="btn-cancel-gallery">Batal</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="glass-card table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Preview</th>
+                                <th>Judul</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-gallery-list">
+                            <!-- Populated from JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </section>
+
+    <!-- Firebase Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

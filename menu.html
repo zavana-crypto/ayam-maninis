@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Favorit | Ayam Ma'ninis Fried Chicken</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+    
+    <!-- Header / Navbar -->
+    <header id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-drumstick-bite"></i> 
+                <span>Ayam Ma'ninis</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="about.html">Tentang</a>
+                <a href="menu.html" class="active">Menu</a>
+                <a href="gallery.html">Galeri</a>
+                <a href="contact.html">Kontak</a>
+            </nav>
+            
+            <div style="display: flex; align-items: center;">
+                <a href="https://wa.me/6281338252908" target="_blank" class="btn btn-primary nav-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan
+                </a>
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <button class="close-menu"><i class="fa-solid fa-xmark"></i></button>
+            <a href="index.html" class="mobile-link">Beranda</a>
+            <a href="about.html" class="mobile-link">Tentang Kami</a>
+            <a href="menu.html" class="mobile-link">Menu Favorit</a>
+            <a href="gallery.html" class="mobile-link">Galeri</a>
+            <a href="contact.html" class="mobile-link">Kontak</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Menu Kami</h1>
+            <p>Nikmati ragam hidangan lezat dengan harga yang bersahabat</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu section-padding">
+        <div class="container">
+            
+            <!-- Menu Container (Dynamic) -->
+            <div id="menu-container" class="menu-grid">
+                <!-- Data akan di-load dari Firestore di sini -->
+                <div class="text-center" style="width: 100%; grid-column: 1 / -1;">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--clr-primary);"></i>
+                    <p class="mt-2">Memuat menu...</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <button class="close-modal" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="section-title" style="margin-bottom: 1.5rem;">
+                <span class="subtitle">Detail Pesanan</span>
+                <h3 id="modalItemName" style="margin-bottom: 0.5rem;">Nama Menu</h3>
+                <p id="modalItemPrice" style="color: var(--clr-accent); font-weight: bold;"></p>
+            </div>
+            <div class="form-group">
+                <label for="orderQty">Jumlah Porsi/Paket</label>
+                <input type="number" id="orderQty" value="1" min="1" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="orderNotes">Catatan Tambahan (Opsional)</label>
+                <textarea id="orderNotes" placeholder="Contoh: Sambal dipisah, dada ayam, es batu sedikit..." class="form-control"></textarea>
+            </div>
+            <button id="submitOrderBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    <i class="fa-solid fa-drumstick-bite"></i> 
+                    <span>Ayam Ma'ninis</span>
+                </a>
+                <p>Destinasi kuliner ayam goreng krispi berkualitas tinggi di Mbay, Kabupaten Nagekeo. Kombinasi cita rasa konsisten dan pelayanan efisien.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Galeri</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Hubungi Kami</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Mbay I, Aesesa, Nagekeo</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> <span class="wa-number-display">+62 813-3825-2908</span></li>
+                    <li><i class="fa-solid fa-clock"></i> <span class="op-hours-display">08.00 – 20.00 WITA</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ayam Ma'ninis Fried Chicken. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281338252908" target="_blank" class="floating-wa">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Firebase Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
