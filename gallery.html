@@ -70,13 +70,108 @@
             
             <!-- Dynamic Gallery Grid -->
             <div id="gallery-container" class="gallery-grid">
-                <!-- Akan dimuat dari Firestore -->
-                <div class="text-center" style="width: 100%; grid-column: 1 / -1;">
-                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--clr-primary);"></i>
-                    <p class="mt-2">Memuat galeri...</p>
+                
+                <div class="gallery-item reveal fade-bottom" onclick="openLightbox('images/gallery/gallery-1.jpg', 'Ayam Crispy Close-up')">
+                    <img src="images/gallery/gallery-1.jpg" alt="Ayam Crispy Close-up" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Ayam Crispy Close-up</h4>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="gallery-item reveal fade-bottom delay-1" onclick="openLightbox('images/gallery/gallery-2.jpg', 'Paket Ayam + Nasi')">
+                    <img src="images/gallery/gallery-2.jpg" alt="Paket Ayam + Nasi" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Paket Ayam + Nasi</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom delay-2" onclick="openLightbox('images/gallery/gallery-3.jpg', 'Burger Ayam Premium')">
+                    <img src="images/gallery/gallery-3.jpg" alt="Burger Ayam Premium" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Burger Ayam Premium</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom" onclick="openLightbox('images/gallery/gallery-4.jpg', 'Kentang Goreng Crispy')">
+                    <img src="images/gallery/gallery-4.jpg" alt="Kentang Goreng Crispy" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Kentang Goreng Crispy</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom delay-1" onclick="openLightbox('images/gallery/gallery-5.jpg', 'Chicken Snack Box')">
+                    <img src="images/gallery/gallery-5.jpg" alt="Chicken Snack Box" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Chicken Snack Box</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom delay-2" onclick="openLightbox('images/gallery/gallery-6.jpg', 'Minuman Dingin')">
+                    <img src="images/gallery/gallery-6.jpg" alt="Minuman Dingin" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Minuman Dingin</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom" onclick="openLightbox('images/gallery/gallery-7.jpg', 'Suasana Restoran Modern')">
+                    <img src="images/gallery/gallery-7.jpg" alt="Suasana Restoran Modern" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Suasana Restoran Modern</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom delay-1" onclick="openLightbox('images/gallery/gallery-8.jpg', 'Proses Penyajian Makanan')">
+                    <img src="images/gallery/gallery-8.jpg" alt="Proses Penyajian Makanan" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Proses Penyajian Makanan</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom delay-2" onclick="openLightbox('images/gallery/gallery-9.jpg', 'Paket Keluarga Fried Chicken')">
+                    <img src="images/gallery/gallery-9.jpg" alt="Paket Keluarga Fried Chicken" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Paket Keluarga</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal fade-bottom" onclick="openLightbox('images/gallery/gallery-10.jpg', 'Foto Menu Favorit')">
+                    <img src="images/gallery/gallery-10.jpg" alt="Foto Menu Favorit" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <h4>Menu Favorit</h4>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
         </div>
     </section>
 
@@ -119,6 +214,13 @@
     <a href="https://wa.me/6281338252908" target="_blank" class="floating-wa">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-overlay">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Preview">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
 
     <!-- Firebase Scripts -->
     <script type="module" src="js/firebase-config.js"></script>

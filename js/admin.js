@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Authentication ---
-    onAuthStateIdChanged(auth, (user) => {
+    onAuthStateChanged(auth, (user) => {
         if (loader) loader.style.display = 'none';
         if (user) {
             // Logged in
